@@ -18,7 +18,7 @@ const Navbar = () => {
                 </div>
 
                <div className="navbar-center">
-                   <h1 className="navbar-logo">New Trending Code<span>.</span></h1>
+                   <h1 className="navbar-logo">New Brands<span>.</span></h1>
                </div>
 
                <div className="navbar-right">
