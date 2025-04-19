@@ -1,0 +1,12 @@
+React Hooks
+
+* Hooks nothing but functions
+* Hooks is only using and working inside of the component and hooks not working in class components and hooks not working in for loop also and any block it's working only component top level
+* Git Hub exp browser lo direct ga new repo create repo.new ani enter chesta dirst ga ha page open avuthundi
+
+useState Hooks ---
+* useState hooks using store any values
+* react useState hook spread operator
+
+useRef Hook ----
+useState and useRef both are same but difference between once useState update the Value component rerenders but useRef update after component not rerenders ela cheyadam vala different loop avuthundi dine vala app crash avuthundi

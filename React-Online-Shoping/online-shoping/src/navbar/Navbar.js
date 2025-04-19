@@ -2,6 +2,7 @@ import React from "react";
 import "./Navbar.css";
 import { IoSearch } from "react-icons/io5";
 import { MdOutlineShoppingCart } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
 
@@ -21,8 +22,8 @@ const Navbar = () => {
                </div>
 
                <div className="navbar-right">
-                  <div className="navbar-menuItem">Register</div>
-                  <div className="navbar-menuItem">Login</div>
+                  <Link to="/register"><div className="navbar-menuItem">Register</div></Link>
+                  <Link to='/login'><div className="navbar-menuItem">Login</div></Link>
                   <div className="navbar-menuItem">
                     <MdOutlineShoppingCart className="icon" />
                      <span className="cart-badge"></span>

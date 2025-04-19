@@ -1,0 +1,12 @@
+useReducer is a hook that is used fro state management
+it is alternative to useState
+Internally useReducer using useState hook only
+when to useReducer and useState?
+
+AS OF NOW WE HAVE Learned
+=========================
+
+useState = state
+useEffect = fetching || side effects
+useContext = context || global state
+useReducer = reducer

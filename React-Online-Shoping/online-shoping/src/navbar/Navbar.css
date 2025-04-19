@@ -59,6 +59,11 @@
     align-items: center;
     justify-content: flex-end;
   }
+
+  .navbar-right a{
+    color: black;
+    text-decoration: none;
+  }
   
   .navbar-menuItem {
     font-size: 20px;

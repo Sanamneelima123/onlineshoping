@@ -1,0 +1,109 @@
+Props
+
+import React from "react";
+
+let title:"Salar",
+let imgURL:"https://occ-0-2040-2186.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABTHF-xY5ufLTEzCYHFUgFdApC66lg-VcclLNoAxchjUS11R5iGX-P6Q-pYEiKZ2vOHNKJQf1FvnIMPwus3QqKXTrlK5vphSUBctmNbqT85FYwd4Q98_DdY_H_AoxMJh46MuX.jpg?r=476"
+
+const App = () =>{
+  return(
+    <section>
+       <Movie firstName="balu" lastName="balla" />
+       <Movie firstName="pavan" lastName="Ananthapalli" />
+    </section>
+  );
+};
+
+const Movie = (props) =>{
+    console.log(props);
+    return(
+      <scetion>
+        <h3>{props.firstName}</h3>
+        <img src={imgURL} alt="netflix show" />
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+      </section>
+    )
+}
+
+----------------------------- END First Example --------------------------------
+
+Props
+
+import React from "react";
+
+let firstObj ={
+title:"first movie",
+imgURL:"https://occ-0-2040-2186.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABTHF-xY5ufLTEzCYHFUgFdApC66lg-VcclLNoAxchjUS11R5iGX-P6Q-pYEiKZ2vOHNKJQf1FvnIMPwus3QqKXTrlK5vphSUBctmNbqT85FYwd4Q98_DdY_H_AoxMJh46MuX.jpg?r=476"
+}
+
+let secondObj ={
+title="second movie",
+imgURL="https://occ-0-2040-2186.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABTHF-xY5ufLTEzCYHFUgFdApC66lg-VcclLNoAxchjUS11R5iGX-P6Q-pYEiKZ2vOHNKJQf1FvnIMPwus3QqKXTrlK5vphSUBctmNbqT85FYwd4Q98_DdY_H_AoxMJh46MuX.jpg?r=476"
+}
+
+const App = () =>{
+  return(
+    <section>
+       <Movie title={firstObj.title} imgURL={firstObj.imgURL} />
+       <Movie title={secondObj.title} imgURL={secondObj.imgURL}  />
+    </section>
+  );
+};
+
+const Movie = (props) =>{
+    console.log(props);
+    const {title, imgURL} = props;
+    return(
+      <scetion>
+        <h3>{title}</h3>
+        <img src={imgURL} alt="netflix show" />
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+      </section>
+    )
+}
+
+
+------------------------------- End Second Example --------------------------------
+
+import React from "react";
+
+const data=[
+  {
+title:"first movie",
+imgURL:"https://occ-0-2040-2186.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABTHF-xY5ufLTEzCYHFUgFdApC66lg-VcclLNoAxchjUS11R5iGX-P6Q-pYEiKZ2vOHNKJQf1FvnIMPwus3QqKXTrlK5vphSUBctmNbqT85FYwd4Q98_DdY_H_AoxMJh46MuX.jpg?r=476",
+description:"Example one"
+},
+{
+title:"second movie",
+imgURL:"https://occ-0-2040-2186.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABTHF-xY5ufLTEzCYHFUgFdApC66lg-VcclLNoAxchjUS11R5iGX-P6Q-pYEiKZ2vOHNKJQf1FvnIMPwus3QqKXTrlK5vphSUBctmNbqT85FYwd4Q98_DdY_H_AoxMJh46MuX.jpg?r=476",
+description:"Example Two"
+}
+]
+
+const App = () =>{
+   return(
+     <section>
+        {data.map((eachObj)=>{
+          const {title, imgURL, description} = eachObj; --(Destacher)
+          return(
+            <Movie title={eachObj.title} imgURL={eachObj.imgURL} description={eachObj.description} /> --(Before Destacher)
+            <Movie title={title} imgURL={imgURL} description={description} />  --(After Destacher)
+          )
+      })}
+     </section>
+   )
+}
+
+const Movie = (props)=>{
+const {title,imgURL, description} = props; ---(Destacher)
+  return(
+    <section>
+      <img src={imgURL} alt="netflix show" />
+      <img src={props.imgURL} alt="netflix show" />
+      <h1>{title || "Rendom Title"}</h1> -- (API Data not come some times show this Rendom Title)
+      <p>{props.description || "alternative description for temporary"}</p>
+    </section>
+  )
+}
+
+export default App;
